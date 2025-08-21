@@ -1,6 +1,7 @@
-//Making a UDP sender????
+//Making an UDP sender????
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
@@ -12,9 +13,16 @@
 
 int main(){
 				printf("UDP Mesage Sender\n");
-				const char* mssg = "Hello";
+				const char* mssg = "Hello World";
 				int sock = socket(AF_INET, SOCK_DGRAM, 0); //for udp we use type as SOCK_DGRAM and protocol as 0
+
+				if (sock < 0) {
+								perror("socket");
+								exit(EXIT_FAILURE);
+				}
+
 				printf("Socket %d\n", sock);
+
 
 				struct sockaddr_in sin;
 				sin.sin_family = AF_INET;
