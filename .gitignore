@@ -35,6 +35,13 @@
 *.i*86
 *.x86_64
 *.hex
+client
+server
+udp
+udp_sender
+udp_receiver
+bin/
+uploads/
 
 # Debug files
 *.dSYM/
